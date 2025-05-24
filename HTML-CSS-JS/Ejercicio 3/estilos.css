@@ -1,0 +1,31 @@
+
+table, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 200px;
+    height: 20px;
+    text-align: center;
+}
+
+.azul {
+    background-color: #69bff8; 
+}
+
+.rosado {
+    background-color: #f48fb1; 
+}
+
+.verde {
+    background-color: #81c784; 
+}
+.amarillo {
+    background-color: #ffd54f;
+}
+
+.gris {
+    background-color: #616161; 
+}
+
+.esquina {
+    background-color: #ff9800; 
+}

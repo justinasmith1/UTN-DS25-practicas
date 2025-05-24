@@ -1,0 +1,32 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: rgb(51, 117, 170);
+    border-bottom: 2px solid #888;
+    font-family: Tahoma;
+}
+
+h2 {
+    color:rgb(89, 151, 202);
+    text-decoration: underline;
+    font-family: Tahoma;
+}
+
+a  {
+    color: #2980b9;
+    text-decoration: none;
+    margin-right: 15px;
+}   
+
+a:hover {
+    text-decoration: underline;   
+}
+
+p {
+    line-height: 1.6;
+    color: #333;
+}

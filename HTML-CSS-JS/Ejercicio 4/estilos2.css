@@ -1,0 +1,25 @@
+body {
+    font-family: 'Georgia', serif;
+    background-color: #fffaf0;
+    padding: 30px;
+    color: #333;
+}
+
+h1, h2 {
+    color: #8e44ad;
+}
+
+p {
+    text-align: justify;
+    line-height: 1.8;
+}
+
+nav a {
+    margin: 0 10px;
+    color: #ad3bf4;
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
