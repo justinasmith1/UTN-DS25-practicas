@@ -1,5 +1,3 @@
-
-/* Reset básico */
 * {
     margin: 0;
     padding: 0;
@@ -12,12 +10,10 @@ body {
     color: #333;
 }
 
-/* Cabecera */
 header {
-    background-image: url("../img/header-bg.jpg");
     background-size: cover;
     color: rgb(49, 113, 209);
-    padding: 20px;
+    padding: 20px 0;
     text-align: center;
 }
 
@@ -33,7 +29,6 @@ header {
     height: auto;
 }
 
-/* Menú */
 nav ul {
     list-style: none;
     background-color: #333;
@@ -56,7 +51,6 @@ nav ul li a:hover {
     background-color: #555;
 }
 
-/* Main */
 main {
     padding: 20px;
     max-width: 1000px;
@@ -95,10 +89,9 @@ main {
 }
 
 .libro p {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
 }
 
-/* Formularios */
 form {
     background-color: white;
     padding: 20px;
@@ -139,7 +132,6 @@ form input[type="submit"]:hover {
     background-color: #555;
 }
 
-/* Footer */
 footer {
     background-color: #333;
     color: white;
@@ -158,7 +150,6 @@ footer a:hover {
     text-decoration: underline;
 }
 
-/* Tabla para ejercicio aparte */
 table {
     border-collapse: collapse;
     width: 80%;
