@@ -12,7 +12,8 @@ body {
 
 header {
     background-size: cover;
-    color: rgb(49, 113, 209);
+    background-color: rgb(15, 29, 38);
+    color: rgb(106, 135, 164);
     padding: 20px 0;
     text-align: center;
 }
@@ -21,7 +22,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 1px;
 }
 
 .logo img {
@@ -58,11 +59,11 @@ main {
 }
 
 .tema {
-    margin-bottom: 30px;
-    padding: 10px;
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 12px;
+    background-color: rgb(114, 138, 161);
+    border-radius: 20px;
+    box-shadow: 10px 10px 5px rgba(0, 0, 0, 0.1);
     text-align: center;
 }
 
@@ -186,4 +187,8 @@ tr:nth-child(3) td:nth-child(2) {
 tr:first-child td:first-child,
 tr:last-child td:last-child {
     background-color: orange;
+}
+
+a {
+    color: rgb(15, 29, 38);
 }
