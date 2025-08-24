@@ -1,6 +1,7 @@
 export interface Book {
     id: number;
     title: string;
+    img: string | null;  
     author: string;
     price: number;
     createdAt?: Date;
@@ -8,6 +9,7 @@ export interface Book {
 export interface CreateBookRequest {
     title: string;
     author: string;
+    img: string | null;  
     price: number;
 }
 export interface UpdateBookRequest {

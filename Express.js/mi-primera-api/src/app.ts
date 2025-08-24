@@ -3,10 +3,10 @@ import express from 'express';
 import { bookRoutes } from './routes/book.routes';
 import { handleError } from './middlewares/error.middleware';
 import { logRequest } from './middlewares/logger.middleware';
-
+import cors from 'cors';
 const app = express();
 const PORT = 3000;
-const cors = require('cors');
+
 
 app.use(cors());               // 👈 Ya se puede usar porque app está definida
 app.use(express.json());
