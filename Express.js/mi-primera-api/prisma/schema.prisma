@@ -27,18 +27,20 @@ model Post {
  id       Int    @id @default(autoincrement())
  title    String
  content  String
- author   User   @relation(fields: [authorId], references: [id])
+ author   User   @relation(fields: [authorId], references: [id], onDelete: SetNull, onUpdate: Cascade)
  authorId Int
 }
 
 model Book {
  id        Int      @id @default(autoincrement())
  title     String
- author    String
  img       String?
  price     Int
  createdAt DateTime @default(now())
  published Boolean @default(false)
+ authorId Int 
+ author   Author @relation(fields: [authorId], references: [id])
+ categories Category[]
 }
 
 enum Role {
@@ -46,3 +48,15 @@ enum Role {
   ADMIN
   MODERATOR
 }
+
+model Author {
+  id    Int    @id @default(autoincrement())
+  name  String
+  books Book[] // Un autor puede tener muchos libros
+ }
+
+ model Category {
+  id    Int    @id @default(autoincrement())
+  name  String
+  books Book[]
+ }
