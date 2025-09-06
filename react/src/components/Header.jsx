@@ -1,13 +1,13 @@
 import React from 'react';
-import logo from '../assets/logo2.jpg'; // Asegúrate de tener esta imagen en tu carpeta assets
 import './Header.css';
+import logo from '../assets/logo-gato2.png'; 
 
 const Header = () => {
     return (
         <header>
             <div className="logo">
-                <img src={logo} alt="Logo de la librería" />
-                <h1>Librería El Saber</h1>
+                <img src={logo} alt="Logo de MiauBooks" className="logo-image" />
+                <h1>MiauBooks</h1>
             </div>
         </header>
     );
