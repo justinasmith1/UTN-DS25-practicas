@@ -1,2 +1,17 @@
-node_modules
-.env
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+*.log
+
+# Backend (Express.js/mi-primera-api)
+Express.js/mi-primera-api/node_modules/
+Express.js/mi-primera-api/dist/
+Express.js/mi-primera-api/.env
+
+# Frontend (react)
+react/node_modules/
+react/dist/
+
+# Archivos temporales
+*.tmp
+*.temp

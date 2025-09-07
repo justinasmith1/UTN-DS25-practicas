@@ -35,15 +35,15 @@ const ContactPage = () => {
                     </div>
                     <div className="info-item">
                         <h3>Teléfono</h3>
-                        <p>+54 11 1234-5678</p>
+                        <p>+54 221 1234-5678</p>
                     </div>
                     <div className="info-item">
                         <h3>Email</h3>
-                        <p>contacto@libreriaelsaber.com</p>
+                        <p>MiauBooks@gmail.com</p>
                     </div>
                     <div className="info-item">
                         <h3>Horarios</h3>
-                        <p>Lunes a Viernes: 9:00 - 18:00<br />
+                        <p>Lunes a Viernes: 9:00 - 19:00<br />
                         Sábados: 9:00 - 14:00</p>
                     </div>
                 </div>

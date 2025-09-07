@@ -17,7 +17,7 @@ const Home = () => {
     return (
         <div className="home-container">
             <h1>¡Bienvenido a MiauBooks!</h1>
-            <p>Descubre nuestra colección de libros favoritos de los gatitos lectores</p>
+            <p>Libros que hacen ronronear a los gatitos lectores</p>
             
             <div className="books-grid">
                 {books.length > 0 ? (
