@@ -11,7 +11,8 @@ const NovelPage = () => {
             const novelBooks = data.books?.filter(book => 
                 book.categories?.some(category => 
                     category.name.toLowerCase().includes('novela') ||
-                    category.name.toLowerCase().includes('novel')
+                    category.name.toLowerCase().includes('novelas') ||
+                    category.name.toLowerCase().includes('literatura')
                 )
             ) || [];
             setBooks(novelBooks);
@@ -21,8 +22,8 @@ const NovelPage = () => {
 
     return (
         <div className="category-page">
-            <h1>Libros de Novela</h1>
-            <p>Descubre nuestras mejores novelas</p>
+            <h1>Novelas</h1>
+            <p>Sumérgete en el mundo de las novelas y la literatura</p>
             
             <div className="books-grid">
                 {books.length > 0 ? (
@@ -43,7 +44,7 @@ const NovelPage = () => {
                     ))
                 ) : (
                     <div className="no-books-message">
-                        <p>No hay libros de novela disponibles en este momento.</p>
+                        <p>No hay novelas disponibles en este momento.</p>
                     </div>
                 )}
             </div>
@@ -52,4 +53,3 @@ const NovelPage = () => {
 };
 
 export default NovelPage;
-

@@ -2,14 +2,14 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/Header';
 import Navbar from './components/Navbar';
-import Footer from './components/Footer';
 import Home from './Pages/Home';
 import FictionPage from './Pages/FictionPage';
 import NovelPage from './Pages/NovelPage';
-import HistoryPage from './Pages/HistoryPage';
 import ArtPage from './Pages/ArtPage';
-import ContactPage from './Pages/ContactPage';
+import HistoryPage from './Pages/HistoryPage';
 import RegisterPage from './Pages/RegisterPage';
+import ContactPage from './Pages/ContactPage';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -23,10 +23,10 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/ficcion" element={<FictionPage />} />
             <Route path="/novela" element={<NovelPage />} />
-            <Route path="/historia" element={<HistoryPage />} />
             <Route path="/arte" element={<ArtPage />} />
-            <Route path="/contacto" element={<ContactPage />} />
+            <Route path="/historia" element={<HistoryPage />} />
             <Route path="/registro" element={<RegisterPage />} />
+            <Route path="/contacto" element={<ContactPage />} />
           </Routes>
         </main>
         <Footer />
