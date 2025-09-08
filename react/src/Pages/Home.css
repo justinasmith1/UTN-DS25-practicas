@@ -94,6 +94,8 @@
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
+    /* Empuja las categorías al fondo para que queden alineadas entre cards */
+    margin-top: auto;
 }
 
 .category-tag {

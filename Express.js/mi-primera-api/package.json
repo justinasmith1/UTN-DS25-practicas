@@ -6,7 +6,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "tsc",
     "start": "node dist/app.js",
-    "dev": "concurrently \"nodemon src/app.ts\" \"npx prisma studio --schema=./prisma/schema.prisma\""
+    "dev": "concurrently \"nodemon src/app.ts\" \"npx prisma studio --schema=./prisma/schema.prisma\"",
+    "seed": "prisma db seed",
+    "db:sync": "prisma db push && prisma db seed"
   },
   "keywords": [],
   "author": "",
@@ -18,7 +20,8 @@
     "zod": "^4.1.5"
   },
   "prisma": {
-    "schema": "prisma/schema.prisma"
+    "schema": "prisma/schema.prisma",
+    "seed": "node prisma/seed.js"
   },
   "devDependencies": {
     "@prisma/client": "^6.14.0",

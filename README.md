@@ -102,6 +102,31 @@ cd react
 npm run dev
 ```
 
+## ✅ Puesta en marcha con datos de ejemplo
+
+Para ver la app con datos ya cargados (seed incluido):
+
+1) Backend
+```bash
+cd Express.js/mi-primera-api
+npm install
+# Asegúrate de tener configurado el archivo .env (ver sección "Instalación y Configuración").
+
+npm run db:sync   # crea tablas y ejecuta el seed con libros
+npm run dev       # levanta el servidor en http://localhost:3000
+```
+
+2) Frontend
+```bash
+cd react
+npm install
+npm run dev       # abre la app (Vite) en el navegador
+```
+
+Notas:
+- El seed crea autores, categorías y varios libros con portadas.
+- Si el backend no está levantado, el frontend puede mostrar datos en caché si ya los vio antes.
+
 ## 📖 API Endpoints
 
 ### Libros
