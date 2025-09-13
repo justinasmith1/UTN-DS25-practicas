@@ -39,3 +39,32 @@ export async function deleteBook(req: Request, res:  Response, next: NextFunctio
         res.json({ success: true, message: 'Libro eliminado exitosamente' });
     } catch (error) { next(error); }
 }
+
+// Endpoint público - obtener libros destacados
+export async function getFeaturedBooks(req: Request, res: Response, next: NextFunction) {
+    try {
+        const books = await bookService.getFeaturedBooks();
+        res.json({ 
+            success: true, 
+            message: 'Libros destacados obtenidos exitosamente',
+            data: books 
+        });
+    } catch (error) { next(error); }
+}
+
+// Endpoint seguro - obtener estadísticas de libros (solo para admins)
+export async function getBookStats(req: Request, res: Response, next: NextFunction) {
+    try {
+        console.log('🔍 Intentando obtener estadísticas de libros...');
+        const stats = await bookService.getBookStats();
+        console.log('✅ Estadísticas obtenidas:', stats);
+        res.json({ 
+            success: true, 
+            message: 'Estadísticas obtenidas exitosamente',
+            data: stats 
+        });
+    } catch (error) { 
+        console.error('❌ Error en getBookStats:', error);
+        next(error); 
+    }
+}

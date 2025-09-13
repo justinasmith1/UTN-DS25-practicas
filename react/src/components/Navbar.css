@@ -24,3 +24,27 @@ nav ul li a.active {
     background-color: #3498db;
     font-weight: bold;
 }
+
+
+/* Estilos por rol para el navbar */
+.navbar-admin {
+    background: linear-gradient(90deg, #e74c3c 0%, #c0392b 100%) !important;
+    border-bottom: 3px solid #a93226;
+}
+
+.navbar-moderator {
+    background: linear-gradient(90deg, #f39c12 0%, #e67e22 100%) !important;
+    border-bottom: 3px solid #d68910;
+}
+
+.navbar-user {
+    background: linear-gradient(90deg, #3498db 0%, #2980b9 100%) !important;
+    border-bottom: 3px solid #1f618d;
+}
+
+.navbar-admin li a:hover,
+.navbar-moderator li a:hover,
+.navbar-user li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}

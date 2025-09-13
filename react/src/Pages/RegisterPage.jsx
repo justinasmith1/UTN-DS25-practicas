@@ -1,13 +1,18 @@
 import React, { useState } from 'react';
+import { useNavigate, Link } from 'react-router-dom';
+import { setToken } from '../helpers/auth';
 import './RegisterPage.css';
 
 const RegisterPage = () => {
+    const navigate = useNavigate();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
         password: '',
         confirmPassword: ''
     });
+    const [error, setError] = useState('');
+    const [loading, setLoading] = useState(false);
 
     const handleChange = (e) => {
         setFormData({
@@ -16,80 +21,105 @@ const RegisterPage = () => {
         });
     };
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault();
+        setLoading(true);
+        setError('');
         
         if (formData.password !== formData.confirmPassword) {
-            alert('Las contraseñas no coinciden');
+            setError('Las contraseñas no coinciden');
+            setLoading(false);
             return;
         }
         
-        alert('¡Registro exitoso! Bienvenido a Librería El Saber.');
-        setFormData({ name: '', email: '', password: '', confirmPassword: '' });
+        try {
+            const res = await fetch("http://localhost:3000/api/auth/register", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    name: formData.name,
+                    email: formData.email,
+                    password: formData.password
+                })
+            });
+            
+            if (!res.ok) {
+                const errorData = await res.json();
+                throw new Error(errorData.error || "Error en el registro");
+            }
+            
+            const { data } = await res.json();
+            setToken(data.token);
+            navigate("/home");
+        } catch (err) {
+            setError(err.message);
+        } finally {
+            setLoading(false);
+        }
     };
 
     return (
-        <div className="register-page">
-            <h1>Registro - MiauBooks</h1>
-            <p>Únete a nuestra comunidad de gatitos lectores</p>
-            
-            <form className="register-form" onSubmit={handleSubmit}>
-                <div className="form-group">
-                    <label htmlFor="name">Nombre completo:</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
+        <div className="register-container">
+            <div className="register-form">
+                <h2>Crear Cuenta</h2>
+                {error && <div className="error-message">{error}</div>}
                 
-                <div className="form-group">
-                    <label htmlFor="email">Email:</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                </div>
-                
-                <div className="form-group">
-                    <label htmlFor="password">Contraseña:</label>
-                    <input
-                        type="password"
-                        id="password"
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                        minLength="6"
-                    />
-                </div>
-                
-                <div className="form-group">
-                    <label htmlFor="confirmPassword">Confirmar contraseña:</label>
-                    <input
-                        type="password"
-                        id="confirmPassword"
-                        name="confirmPassword"
-                        value={formData.confirmPassword}
-                        onChange={handleChange}
-                        required
-                        minLength="6"
-                    />
-                </div>
-                
-                <button type="submit">Registrarse</button>
+                <form onSubmit={handleSubmit}>
+                    <div className="form-group">
+                        <input
+                            type="text"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            placeholder="Nombre completo"
+                            required
+                        />
+                    </div>
+                    
+                    <div className="form-group">
+                        <input
+                            type="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            placeholder="Email"
+                            required
+                        />
+                    </div>
+                    
+                    <div className="form-group">
+                        <input
+                            type="password"
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            placeholder="Contraseña (mínimo 6 caracteres)"
+                            required
+                            minLength="6"
+                        />
+                    </div>
+                    
+                    <div className="form-group">
+                        <input
+                            type="password"
+                            name="confirmPassword"
+                            value={formData.confirmPassword}
+                            onChange={handleChange}
+                            placeholder="Confirmar contraseña"
+                            required
+                            minLength="6"
+                        />
+                    </div>
+                    
+                    <button type="submit" disabled={loading}>
+                        {loading ? "Registrando..." : "Registrarse"}
+                    </button>
+                </form>
                 
                 <p className="login-link">
-                    ¿Ya tienes cuenta? <a href="/login">Inicia sesión aquí</a>
+                    ¿Ya tienes cuenta? <Link to="/login">Inicia sesión aquí</Link>
                 </p>
-            </form>
+            </div>
         </div>
     );
 };

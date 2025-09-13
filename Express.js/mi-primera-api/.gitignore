@@ -25,6 +25,11 @@ Thumbs.db
 .vscode/
 .idea/
 
+#hashador de contraseñas
+.hash-moderator-password.js
+
 #¿Qué hace esto?
 # A partir de ahora, Git va a ignorar todo lo que esté en esa lista.
 # Así no subís basura, archivos gigantes o secretos al repo.
+
+

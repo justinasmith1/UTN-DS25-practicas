@@ -2,21 +2,17 @@
 // Tipos del dominio
 // ===================
 
+import { Role } from "@prisma/client";
+
+export type RoleType = 'USER' | 'ADMIN' | 'MODERATOR';  
+
 export interface User {
   id: number;
   email: string;
   name: string;
   password: string;
-  posts?: Post[];
+  Role?: RoleType;
   createdAt: Date;
-}
-
-export interface Post {
-  id: number;
-  title: string;
-  content: string;
-  authorId: number;
-  author?: User;
 }
 
 export interface Author {

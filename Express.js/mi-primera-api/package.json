@@ -15,8 +15,10 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
     "zod": "^4.1.5"
   },
   "prisma": {
@@ -25,8 +27,10 @@
   },
   "devDependencies": {
     "@prisma/client": "^6.14.0",
+    "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
     "@types/node": "^24.2.0",
     "concurrently": "^9.2.0",
     "nodemon": "^3.1.10",

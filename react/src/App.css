@@ -10,6 +10,35 @@
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Estilos por rol */
+.role-admin {
+  background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+  min-height: 100vh;
+}
+
+.role-moderator {
+  background: linear-gradient(135deg, #feca57 0%, #ff9ff3 100%);
+  min-height: 100vh;
+}
+
+.role-user {
+  background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+  min-height: 100vh;
+}
+
+/* Ajustar el contenido principal para que se vea bien sobre el gradiente */
+.role-admin .main-content,
+.role-moderator .main-content,
+.role-user .main-content {
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px 20px 0 0;
+  margin: 0 20px;
+  padding: 20px;
+  box-shadow: 0 -10px 30px rgba(0,0,0,0.1);
+  min-height: calc(100vh - 200px);
 }
 
 
