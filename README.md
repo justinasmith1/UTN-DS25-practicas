@@ -124,16 +124,18 @@ Notas:
 - `POST /api/auth/login` - Login, devuelve token JWT
 - `GET /api/users` - Obtener todos los usuarios
 
-### Matriz de Permisos
-| Funcionalidad                      |  USER  | MODERATOR  |  ADMIN  | 
-| --------------------------------------------------------------------
-| Ver libros                         |   ✅  |     ✅     |   ✅   |
-| Crear / Editar libros              |   ❌  |     ✅     |   ✅   |
-| Eliminar libros                    |   ❌  |     ❌     |   ✅   |
-| Ver lista de usuarios              |   ❌  |     ✅     |   ✅   |
-| Ver usuario específico             |   ❌  |     ✅     |   ✅   |
-| Crear / Editar / Eliminar usuarios |   ❌  |     ❌     |   ✅   |
-| Ver estadísticas                   |   ❌  |     ❌     |   ✅   |
+## 🔒 Matriz de Permisos por Rol
+
+| Funcionalidad                  | USER | MODERATOR | ADMIN |
+| ------------------------------- | :--: | :-------: | :---: |
+| Ver libros                      | ✅   | ✅        | ✅    |
+| Crear / Editar libros           | ❌   | ✅        | ✅    |
+| Eliminar libros                 | ❌   | ❌        | ✅    |
+| Ver lista de usuarios           | ❌   | ✅        | ✅    |
+| Ver usuario específico          | ❌   | ✅        | ✅    |
+| Crear / Editar / Eliminar usuarios | ❌   | ❌        | ✅    |
+| Ver estadísticas                | ❌   | ❌        | ✅    |
+
 
 
 ## 🎨 Páginas de la Aplicación
