@@ -71,7 +71,7 @@ export default function AdminDashboard() {
                         </div>
                         <div className="stat-card">
                             <h3>Precio Promedio</h3>
-                            <p className="stat-number">${stats?.averagePrice || 0}</p>
+                            <p className="stat-number">${stats?.averagePrice ? stats.averagePrice.toFixed(2) : 0}</p>
                         </div>
                     </div>
                 </div>

@@ -123,9 +123,9 @@ const Home = () => {
                                 <h3>{book.title}</h3>
                                 <p className="author">Autor: {book.author?.name || 'Desconocido'}</p>
                                 <p className="price">${book.price}</p>
-                                <p className="published">
+                                {/*<p className="published"> 
                                     {book.published ? 'Publicado' : 'Borrador'}
-                                </p>
+                                </p> */}
                                 {book.categories && book.categories.length > 0 && (
                                     <div className="categories">
                                         {book.categories.map(category => (

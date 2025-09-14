@@ -216,3 +216,16 @@
     max-width: 600px;
     width: 100%;
 }
+
+/*agregado para corregir margenes entre la info de cada libro*/
+.book-card .book-info h3 {
+    margin-bottom: 0.8rem !important;
+}
+
+.book-card .book-info .author {
+    margin-bottom: 1rem !important;
+}
+
+.book-card .book-info .price {
+    margin-bottom: 1rem !important;
+}
