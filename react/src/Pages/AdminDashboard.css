@@ -71,7 +71,7 @@
 }
 
 .admin-btn.primary {
-    background: #3498db;
+    background: #95a5a6;
     color: white;
 }
 
@@ -82,6 +82,10 @@
 
 .admin-btn.danger {
     background: #e74c3c;
+    color: white;
+}
+.admin-btn.danger2 {
+    background: #434242;
     color: white;
 }
 

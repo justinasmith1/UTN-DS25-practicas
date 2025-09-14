@@ -9,7 +9,10 @@ Una aplicación web completa de librería desarrollada con **React** (frontend) 
 - **Base de datos**: PostgreSQL con Prisma ORM
 - **Navegación**: Sistema de rutas completo
 - **Categorías**: Ficción, Novela, Historia, Arte
-- **Funcionalidades**: CRUD completo de libros, autores y categorías
+- **Funcionalidades**: 
+    - CRUD completo de libros, autores y categorías
+    - Autenticación y Autorización con JWT
+    - Manejo de roles (USER, ADMIN, MODERATOR) con distintos niveles de acceso
 
 ## 🛠️ Tecnologías Utilizadas
 
@@ -18,6 +21,7 @@ Una aplicación web completa de librería desarrollada con **React** (frontend) 
 - Vite
 - React Router DOM
 - CSS3
+- Context/Custom Hooks para manejo de sesión y token JWT
 
 ### Backend
 - Node.js
@@ -27,29 +31,8 @@ Una aplicación web completa de librería desarrollada con **React** (frontend) 
 - PostgreSQL
 - Zod (validación)
 - CORS
-
-## 📁 Estructura del Proyecto
-
-```
-UTN-DS25-practicas/
-├── react/                    # Frontend React
-│   ├── src/
-│   │   ├── Pages/           # Páginas de la aplicación
-│   │   ├── components/      # Componentes reutilizables
-│   │   └── assets/          # Imágenes y recursos
-│   └── package.json
-├── Express.js/
-│   └── mi-primera-api/      # Backend Express
-│       ├── src/
-│       │   ├── controllers/ # Controladores
-│       │   ├── services/    # Lógica de negocio
-│       │   ├── routes/      # Rutas de la API
-│       │   ├── middlewares/ # Middlewares
-│       │   └── validations/ # Validaciones con Zod
-│       ├── prisma/          # Esquema y migraciones
-│       └── package.json
-└── README.md
-```
+- jsonwebtoken (JWT) para autenticación
+- bcrypt para encriptación de contraseñas
 
 ## 🚀 Instalación y Configuración
 
@@ -136,15 +119,36 @@ Notas:
 - `PUT /api/books/:id` - Actualizar libro
 - `DELETE /api/books/:id` - Eliminar libro
 
+### Autenticacion
+- `POST /api/auth/register` - Registrar usuario 
+- `POST /api/auth/login` - Login, devuelve token JWT
+- `GET /api/users` - Obtener todos los usuarios
+
+### Matriz de Permisos
+| Funcionalidad                      |  USER  | MODERATOR  |  ADMIN  | 
+| --------------------------------------------------------------------
+| Ver libros                         |   ✅  |     ✅     |   ✅   |
+| Crear / Editar libros              |   ❌  |     ✅     |   ✅   |
+| Eliminar libros                    |   ❌  |     ❌     |   ✅   |
+| Ver lista de usuarios              |   ❌  |     ✅     |   ✅   |
+| Ver usuario específico             |   ❌  |     ✅     |   ✅   |
+| Crear / Editar / Eliminar usuarios |   ❌  |     ❌     |   ✅   |
+| Ver estadísticas                   |   ❌  |     ❌     |   ✅   |
+
+
 ## 🎨 Páginas de la Aplicación
 
-- **Inicio** (`/`) - Todos los libros
+- **Inicio** (`/`) - Algunos libros
+- **Catalogo** (`/catalogo`) - Todos los libros
 - **Ficción** (`/ficcion`) - Libros de ficción
 - **Novela** (`/novela`) - Novelas
 - **Historia** (`/historia`) - Libros de historia
 - **Arte** (`/arte`) - Libros de arte
 - **Registro** (`/registro`) - Página de registro
+- **Iniciar Sesion** (`/iniciar-sesion`) - Página de inicio de sesion
 - **Contacto** (`/contacto`) - Información de contacto
+- **Panel de Moderación** (`/moderador`) - Página del moderador
+- **Panel de Administración** (`/admin`) - Página del admin
 
 ## 👨‍💻 Desarrollo
 
@@ -158,13 +162,15 @@ Este proyecto fue desarrollado como práctica para la materia **Desarrollo de So
 - ✅ Manejo de errores
 - ✅ Interfaz responsive
 - ✅ Integración frontend-backend
+- ✅ Autenticación y autorización con JWT
+- ✅ Gestión de roles y accesos diferenciados (USER, ADMIN, MODERATOR)
 
 ## 📝 Notas
 
 - El proyecto utiliza TypeScript en el backend para mayor robustez
-- Prisma Studio está disponible para gestión visual de la base de datos
 - La aplicación incluye manejo de CORS para desarrollo
 - Validaciones implementadas tanto en frontend como backend
+- El control de accesos garantiza que cada rol solo pueda ver/modificar lo que le corresponde
 
 ---
 

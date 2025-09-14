@@ -21,7 +21,8 @@ export default function AdminDashboard() {
         }
         if (usersData) {
             console.log('👥 Users data received:', usersData);
-            setUsers(usersData.data || []);
+            /*setUsers(usersData.data || []);*/
+            setUsers(usersData.users || usersData.data?.users || []);
         }
         
         // Solo mostrar loading si ambas peticiones están cargando
@@ -109,7 +110,7 @@ export default function AdminDashboard() {
                             Gestionar Libros (CRUD Completo)
                         </button>
                         <button className="admin-btn danger">
-                            Eliminar Libros (Solo Admin)
+                            Eliminar Libros 
                         </button>
                         <button className="admin-btn secondary">
                             Gestionar Autores
@@ -117,7 +118,7 @@ export default function AdminDashboard() {
                         <button className="admin-btn secondary">
                             Gestionar Categorías
                         </button>
-                        <button className="admin-btn danger">
+                        <button className="admin-btn danger2">
                             Configuración del Sistema
                         </button>
                     </div>
