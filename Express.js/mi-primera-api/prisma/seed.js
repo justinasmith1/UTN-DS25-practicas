@@ -1,9 +1,51 @@
 // prisma/seed.js
 const { PrismaClient } = require('@prisma/client');
 const prisma = new PrismaClient();
+const bcrypt = require('bcrypt');
 
 async function main() {
-  // Helpers que no requieren índices únicos
+  console.log('Iniciando el seeding de la base de datos...');
+
+  // 1. Lógica para crear USUARIOS y roles
+  const usersToCreate = [
+    {
+      email: 'marianoperez@gmail.com',
+      name: 'Mariano Perez',
+      plainPassword: 'marianoperez',
+      role: 'USER',
+    },
+    {
+      email: 'emiliosautel@gmail.com',
+      name: 'Emilio Sautel',
+      plainPassword: 'emiliosautel',
+      role: 'MODERATOR',
+    },
+    {
+      email: 'justinasmith@gmail.com',
+      name: 'Justina Smith',
+      plainPassword: 'justinasmith',
+      role: 'ADMIN',
+    },
+  ];
+
+  for (const user of usersToCreate) {
+    const hashedPassword = await bcrypt.hash(user.plainPassword, 10);
+    await prisma.user.upsert({
+      where: { email: user.email },
+      update: { password: hashedPassword, role: user.role },
+      create: {
+        email: user.email,
+        name: user.name,
+        password: hashedPassword,
+        role: user.role,
+      },
+    });
+    console.log(`✅ Usuario con rol ${user.role} creado/actualizado.`);
+  }
+}
+
+async function main() {
+// 2. Lógica para crear CATEGORÍAS
   async function ensureCategory(name) {
     const safeName = (name || '').trim();
     const existing = await prisma.category.findFirst({ where: { name: safeName } });
@@ -11,6 +53,7 @@ async function main() {
     return prisma.category.create({ data: { name: safeName } });
   }
 
+// 3. Lógica para crear AUTORES
   async function ensureAuthor(name) {
     const safeName = (name || '').trim();
     const existing = await prisma.author.findFirst({ where: { name: safeName } });
@@ -18,6 +61,7 @@ async function main() {
     return prisma.author.create({ data: { name: safeName } });
   }
 
+ // 4. Lógica para crear LIBROS
   async function ensureBook({ title, price, published, img, authorName, categoryName }) {
     const author = await ensureAuthor(authorName);
     const category = await ensureCategory(categoryName);
