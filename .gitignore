@@ -15,3 +15,6 @@ react/dist/
 # Archivos temporales
 *.tmp
 *.temp
+
+
+.env

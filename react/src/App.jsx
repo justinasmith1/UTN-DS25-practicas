@@ -17,6 +17,7 @@ import ProtectedRoute from './components/ProtectedRoute';
 import Footer from './components/Footer';
 import { getToken } from './helpers/auth';
 import './App.css';
+import CreateUserPage from './Pages/CreateUserPage';
 
 function App() {
   const getUserRole = () => {
@@ -92,6 +93,11 @@ function App() {
             <Route path="/contacto" element={
               <ProtectedRoute>
                 <ContactPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/users/create" element={
+              <ProtectedRoute>
+                <CreateUserPage />
               </ProtectedRoute>
             } />
           </Routes>

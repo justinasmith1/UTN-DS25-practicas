@@ -103,7 +103,7 @@ export default function AdminDashboard() {
                 <div className="admin-actions">
                     <h2>Acciones de Administración</h2>
                     <div className="action-buttons">
-                        <button className="admin-btn primary" onClick={() => window.location.href = '/api/users'}>
+                        <button className="admin-btn primary" onClick={() => window.location.href = '/users/create'}>
                             Gestionar Usuarios (CRUD Completo)
                         </button>
                         <button className="admin-btn secondary" onClick={() => window.location.href = '/api/books'}>
