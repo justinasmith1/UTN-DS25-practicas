@@ -1,0 +1,82 @@
+/* área completa con fondo suave */
+.cb-wrapper {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background: linear-gradient(180deg, #f6f9ff 0%, #eef3ff 100%);
+    padding: 24px;
+}
+
+/* card limpia y centrada */
+.cb-card {
+    width: 100%;
+    max-width: 520px;
+    background: #fff;
+    border-radius: 18px;
+    padding: 28px;
+    border: 1px solid #e7ecff;
+}
+
+/* header */
+.cb-header h2 {
+    margin: 0 0 4px;
+    font-weight: 700;
+    color: #1e9de6;
+}
+.cb-header p {
+    margin: 0 0 18px;
+    color: #6b7280;
+    font-size: 0.95rem;
+}
+
+/* labels e inputs */
+.cb-label {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.cb-input {
+    padding: 10px 14px;
+    border-radius: 12px;
+    border: 1px solid #d6dbf5;
+    transition: border-color .2s ease, box-shadow .2s ease;
+}
+
+.cb-input:focus {
+    border-color: #2d4ef5;
+    box-shadow: 0 0 0 4px rgba(45, 78, 245, 0.15);
+    outline: none;
+}
+
+/* botón principal */
+.cb-btn {
+    background: linear-gradient(90deg, #2d4ef5, #6a82fb);
+    border: none;
+    color: #fff;
+    border-radius: 50px !important;
+    font-weight: 700;
+    padding: 12px 16px;
+    transition: transform .06s ease, filter .2s ease;
+}
+
+.cb-btn:hover { filter: brightness(0.95); }
+.cb-btn:active { transform: translateY(1px); }
+
+/* responsive: que no quede todo peque en pantallas grandes */
+@media (min-width: 1400px) {
+    .cb-card { transform: scale(1.05); }
+}
+.d-block { display: block; }
+.mb-8 { margin-bottom: 24px; }
+.mb-3 { margin-bottom: 8px; }
+
+/* Estilo para mensajes de error debajo de inputs */
+.invalid-feedback {
+    color: #dc3545;   /* rojo Bootstrap */
+    font-size: 0.9rem;
+    margin-top: 4px;
+    font-weight: 500;
+}
+

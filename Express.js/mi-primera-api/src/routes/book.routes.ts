@@ -16,17 +16,15 @@ router.get('/stats', authenticateToken, requireRole(['ADMIN']), bookController.g
 // GET /api/books - Todos los libros (público)
 router.get('/', bookController.getAllBooks);
 
-// GET /api/books/:id - Libro por ID (público) - DEBE IR AL FINAL
+// GET /api/books/:id - Libro por ID (público)
 router.get('/:id', bookController.getBookById);
 
-// Rutas de moderación (requieren rol MODERATOR o ADMIN)
-// POST /api/books - Crear libro (requiere moderador o admin)
+// POST /api/books - Crear libro (moderador o admin)
 router.post('/', authenticateToken, requireRole(['MODERATOR', 'ADMIN']), validate(BookCreateSchema), bookController.createBook);
 
-// PUT /api/books/:id - Actualizar libro (requiere moderador o admin)
+// PUT /api/books/:id - Actualizar libro (moderador o admin)
 router.put('/:id', authenticateToken, requireRole(['MODERATOR', 'ADMIN']), validate(BookUpdateSchema), bookController.updateBook);
 
-// Rutas de administración (requieren rol ADMIN)
 // DELETE /api/books/:id - Eliminar libro (solo admin)
 router.delete('/:id', authenticateToken, requireRole(['ADMIN']), bookController.deleteBook);
 

@@ -1,19 +1,10 @@
-// ===================
-// Tipos del dominio
-// ===================
 
 import { Role } from "@prisma/client";
 
-export type RoleType = 'USER' | 'ADMIN' | 'MODERATOR';  
+// ===================
+// Autor
+// ===================
 
-export interface User {
-  id: number;
-  email: string;
-  name: string;
-  password: string;
-  Role?: RoleType;
-  createdAt: Date;
-}
 
 export interface Author {
   id: number;
@@ -21,14 +12,53 @@ export interface Author {
   books?: Book[];
 }
 
+export interface CreateAuthorRequest {
+  name: string;
+}
+
+export interface UpdateAuthorRequest {
+  name?: string;
+}
+
+export interface AuthorResponse {
+  author: Author;
+  message: string;
+}
+
+export interface AuthorsListResponse {
+  authors: Author[];
+  total: number;
+}
+// ===================
+// Categoria
+// ===================
+
 export interface Category {
   id: number;
   name: string;
   books?: Book[];
 }
 
+export interface CreateCategoryRequest {
+  name: string;
+}
+
+export interface UpdateCategoryRequest {
+  name?: string;
+}
+
+export interface CategoryResponse {
+  category: Category;
+  message: string;
+}
+
+export interface CategoriesListResponse {
+  categories: Category[];
+  total: number;
+}
+
 // ===================
-// Book y DTOs
+// Libro
 // ===================
 
 export interface Book {

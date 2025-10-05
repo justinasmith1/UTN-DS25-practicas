@@ -1,6 +1,5 @@
-// src/services/book.service.ts
 import prisma from '../config/prisma';
-import { Prisma } from '@prisma/client'; // si generaste en ruta custom, ajusta el import
+import { Prisma } from '@prisma/client'; 
 import type { CreateBookInput, UpdateBookInput } from '../validations/book.validation';
 import { Book as BookDTO } from '../types/book.types';
 

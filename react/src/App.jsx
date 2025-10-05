@@ -18,6 +18,7 @@ import Footer from './components/Footer';
 import { getToken } from './helpers/auth';
 import './App.css';
 import CreateUserPage from './Pages/CreateUserPage';
+import CreateBookPage from './Pages/CreateBookPage';
 
 function App() {
   const getUserRole = () => {
@@ -98,6 +99,11 @@ function App() {
             <Route path="/users/create" element={
               <ProtectedRoute>
                 <CreateUserPage />
+              </ProtectedRoute>
+            } />
+            <Route path="/books/create" element={
+              <ProtectedRoute>
+                <CreateBookPage />
               </ProtectedRoute>
             } />
           </Routes>
