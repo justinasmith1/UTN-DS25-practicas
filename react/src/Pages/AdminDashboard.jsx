@@ -104,9 +104,11 @@ export default function AdminDashboard() {
                 <div className="admin-actions">
                     <h2>Acciones de Administración</h2>
                     <div className="action-buttons">
-                        <Link to="/users/create" className="admin-btn primary"> Gestionar Usuarios (CRUD Completo)</Link>
-                        <Link to="/books/create" className="admin-btn primary"> Eliminar Libros </Link>
-
+                        <Link to="/users/create" className="admin-btn primary text-decoration-none"> Crear Usuarios</Link>
+                        <Link to="/books/create" className="admin-btn primary text-decoration-none"> Crear Libros </Link>
+                        <button className="admin-btn danger">
+                            Eliminar Libro
+                        </button>
                         <button className="admin-btn secondary">
                             Gestionar Autores
                         </button>
