@@ -26,7 +26,7 @@ function CreateBookPage() {
 
     const fetchAuthors = async () => {
         try {
-            const res = await fetch("http://localhost:3000/api/authors", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/authors`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("jwt_token")}`,
                 },
@@ -42,7 +42,7 @@ function CreateBookPage() {
 
     const fetchCategories = async () => {
         try {
-            const res = await fetch("http://localhost:3000/api/categories", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/categories`, {
                 headers: {
                     Authorization: `Bearer ${localStorage.getItem("jwt_token")}`,
                 },
@@ -93,7 +93,7 @@ function CreateBookPage() {
         }
 
         try {
-            const res = await fetch("http://localhost:3000/api/books", {
+            const res = await fetch(`${import.meta.env.VITE_API_URL}/api/books`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

@@ -9,10 +9,10 @@ export default function AdminDashboard() {
     const [error, setError] = useState(null);
 
     // Obtener estadísticas de libros
-    const { data: statsData, loading: statsLoading, error: statsError } = useFetch('http://localhost:3000/api/books/stats', {}, { requireAuth: true });
+    const { data: statsData, loading: statsLoading, error: statsError } = useFetch(`${import.meta.env.VITE_API_URL}/api/books/stats`, {}, { requireAuth: true });
     
     // Obtener lista de usuarios
-    const { data: usersData, loading: usersLoading, error: usersError } = useFetch('http://localhost:3000/api/users', {}, { requireAuth: true });
+    const { data: usersData, loading: usersLoading, error: usersError } = useFetch(`${import.meta.env.VITE_API_URL}/api/user`, {}, { requireAuth: true });
     
     useEffect(() => {
         if (statsData) {

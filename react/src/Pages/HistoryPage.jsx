@@ -5,7 +5,7 @@ const HistoryPage = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/books')
+        fetch(`${import.meta.env.VITE_API_URL}/api/books`)
         .then(res => res.json())
         .then(data => {
             const historyBooks = data.books?.filter(book => 

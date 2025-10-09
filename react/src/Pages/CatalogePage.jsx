@@ -3,7 +3,7 @@ import BookCard from '../components/BookCard';
 
 function CatalogPage() {
 
-const url = 'http://localhost:3000/api/books?limit=10' ;
+const url = `${import.meta.env.VITE_API_URL}/api/books?limit=10` ;
 const { data, loading, error } = useFetch(url, {}, { requireAuth: true })
 
 if (loading) return <p>Cargando...</p>;

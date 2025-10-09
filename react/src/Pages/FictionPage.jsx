@@ -5,7 +5,7 @@ const FictionPage = () => {
     const [books, setBooks] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/books')
+        fetch(`${import.meta.env.VITE_API_URL}/api/books`)
         .then(res => res.json())
         .then(data => {
             // Filtrar libros de ficción (asumiendo que hay una categoría con nombre "Ficción")
