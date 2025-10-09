@@ -12,7 +12,7 @@ export default function AdminDashboard() {
     const { data: statsData, loading: statsLoading, error: statsError } = useFetch(`${import.meta.env.VITE_API_URL}/api/books/stats`, {}, { requireAuth: true });
     
     // Obtener lista de usuarios
-    const { data: usersData, loading: usersLoading, error: usersError } = useFetch(`${import.meta.env.VITE_API_URL}/api/user`, {}, { requireAuth: true });
+    const { data: usersData, loading: usersLoading, error: usersError } = useFetch(`${import.meta.env.VITE_API_URL}/api/users`, {}, { requireAuth: true });
     
     useEffect(() => {
         if (statsData) {
