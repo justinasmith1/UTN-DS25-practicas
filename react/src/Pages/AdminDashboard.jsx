@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useFetch } from '../hooks/useFetch';
 import './AdminDashboard.css';
+import { Link } from "react-router-dom";
 
 export default function AdminDashboard() {
     const [stats, setStats] = useState(null);
@@ -103,15 +104,9 @@ export default function AdminDashboard() {
                 <div className="admin-actions">
                     <h2>Acciones de Administración</h2>
                     <div className="action-buttons">
-                        <button className="admin-btn primary" onClick={() => window.location.href = '/users/create'}>
-                            Gestionar Usuarios (CRUD Completo)
-                        </button>
-                        <button className="admin-btn secondary" onClick={() => window.location.href = '/books/create'}>
-                            Gestionar Libros (CRUD Completo)
-                        </button>
-                        <button className="admin-btn danger">
-                            Eliminar Libros 
-                        </button>
+                        <Link to="/users/create" className="admin-btn primary"> Gestionar Usuarios (CRUD Completo)</Link>
+                        <Link to="/books/create" className="admin-btn primary"> Eliminar Libros </Link>
+
                         <button className="admin-btn secondary">
                             Gestionar Autores
                         </button>
