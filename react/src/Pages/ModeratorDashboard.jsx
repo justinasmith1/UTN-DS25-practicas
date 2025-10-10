@@ -58,10 +58,10 @@ export default function ModeratorDashboard() {
                 <div className="moderator-actions">
                     <h2>Herramientas de Moderación</h2>
                     <div className="action-buttons">
-                        <button className="mod-btn primary" onClick={() => window.location.href = '/api/users'}>
+                        <button className="mod-btn primary">
                             Ver Lista de Usuarios
                         </button>
-                        <button className="mod-btn secondary" onClick={() => window.location.href = '/api/books'}>
+                        <button className="mod-btn secondary">
                             Crear/Editar Libros
                         </button>
                         <button className="mod-btn secondary">
