@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { getToken, clearToken } from '../helpers/auth';
 import './Header.css';
 import logo from '../assets/logo-gato5.png'; 
-
+import { useNavigate } from 'react-router-dom';
 const Header = () => {
     const [user, setUser] = useState(null);
-
+    const navigate = useNavigate();
     useEffect(() => {
         const updateUser = () => {
             const token = getToken();
@@ -40,7 +40,7 @@ const Header = () => {
 
     const handleLogout = () => {
         clearToken();
-        window.location.href = '/login';
+        navigate('/login');
     };
 
     const getRoleColor = (role) => {
