@@ -3,6 +3,19 @@
 
 Una aplicación web completa de librería desarrollada con **React** (frontend) y **Express.js** (backend) con **Prisma** como ORM.
 
+## 📸 Demo en Vivo
+
+Explora la aplicación en acción a través de sus demos desplegadas:
+
+**Frontend (React):** [MiauBooks Frontend](https://libreria-cyan.vercel.app/login)
+
+
+**Backend (API):** [MiauBooks BAckend](https://utn-ds25-practicas-9tay.onrender.com)
+
+**Pruebas unitarias y de integración:** El proyecto cuenta con tests para los servicios y las rutas del backend, garantizando la fiabilidad de la API.
+
+---
+
 ## 🚀 Características
 
 * **Frontend**: React con Vite, React Router para navegación
@@ -172,12 +185,34 @@ Notas:
 * `POST /api/books`
 * `PUT /api/books/:id`
 * `DELETE /api/books/:id`
+* `GET /api/books/featured`
+* `GET /api/books/stats`
+
+### Autores
+
+* `GET /api/authors`
+* `GET /api/authors/:id`
+* `POST /api/authors`
+* `PUT /api/authors/:id`
+* `DELETE /api/authors/:id`
+
+### Categorías
+
+* `GET /api/categories`
+* `GET /api/categories/:id`
+* `POST /api/categories`
+* `PUT /api/categories/:id`
+* `DELETE /api/categories/:id`
 
 ### Autenticación
 
 * `POST /api/auth/register`
 * `POST /api/auth/login`
 * `GET /api/users`
+* `GET /api/users/:id`
+* `POST /api/users`
+* `PUT /api/users/:id`
+* `DELETE /api/users/:id`
 
 ---
 
@@ -226,6 +261,7 @@ Este proyecto fue desarrollado como práctica para la materia **Desarrollo de So
 * ✅ Integración frontend-backend
 * ✅ Autenticación y autorización con JWT
 * ✅ Gestión de roles (USER, ADMIN, MODERATOR)
+* ✅ Seed de datos
 
 ---
 
