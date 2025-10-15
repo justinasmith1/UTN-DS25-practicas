@@ -10,7 +10,7 @@ Explora la aplicación en acción a través de sus demos desplegadas:
 **Frontend (React):** [MiauBooks Frontend](https://libreria-cyan.vercel.app/login)
 
 
-**Backend (API):** [MiauBooks BAckend](https://utn-ds25-practicas-9tay.onrender.com)
+**Backend (API):** [MiauBooks Backend](https://utn-ds25-practicas-9tay.onrender.com)
 
 **Pruebas unitarias y de integración:** El proyecto cuenta con tests para los servicios y las rutas del backend, garantizando la fiabilidad de la API.
 
@@ -28,6 +28,8 @@ Explora la aplicación en acción a través de sus demos desplegadas:
   * CRUD completo de libros, autores y categorías
   * Autenticación y Autorización con JWT
   * Manejo de roles (USER, ADMIN, MODERATOR) con distintos niveles de acceso
+
+---
 
 ## 🛠️ Tecnologías Utilizadas
 
