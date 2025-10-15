@@ -7,9 +7,9 @@
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "build": "tsc",
-    "start": "node dist/app.js",
-    "dev": "concurrently \"nodemon src/app.ts\" \"npx prisma studio --schema=./prisma/schema.prisma\"",
-    "seed": "prisma db seed",
+    "start": "node dist/server.js",
+    "dev": "ts-node-dev --respawn --transpile-only src/server.ts",
+     "seed": "prisma db seed",
     "db:sync": "prisma db push && prisma db seed"
     
   },

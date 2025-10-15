@@ -11,7 +11,6 @@ import { authorRoutes } from './routes/author.routes';
 
 dotenv.config();
 
-const PORT = process.env.PORT || 3000;
 const app = express();
 // Middlewares globales
 app.use(cors()); // CORS abierto temporalmente para debug
@@ -27,6 +26,6 @@ app.use('/api/authors', authorRoutes);
 
  // Error handler (siempre al final)
 app.use(handleError);
-app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-});
+
+
+export default app;
