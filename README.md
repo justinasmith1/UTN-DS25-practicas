@@ -1,6 +1,3 @@
-Perfecto 🚀 Te actualizo el **README** con la sección de **Docker Desktop**, de modo que quede claro cómo levantar todo el stack (frontend + backend + base de datos) sin instalar dependencias localmente.
-
----
 
 # 📚 MiauBooks - Librería Online
 
